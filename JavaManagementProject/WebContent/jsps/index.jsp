@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
   <html>
   <head>
-  	<link rel="stylesheet" type="text/css" href="../Stylesheets/stylesheet.css">
+  	<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css">
     <title> Login </title>
     <meta charset ="UTF-8">
   </head>
@@ -12,7 +12,7 @@
     
     <header>
       <div class="h-container">
-        <h1><a href="./index.html" style="logo">Taskmanagement</a></h1>
+        <h1><a href="./index.html" style="logo">Task management</a></h1>
         <nav>
           <a href="./index.html">Login</a>
           <a href="./task.html">Task</a>
