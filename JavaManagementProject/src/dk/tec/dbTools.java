@@ -16,6 +16,10 @@ public class dbTools {
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	
+	public static void main(String[] args)
+	{
+		System.out.println(checkUser("rkr", "password"));
+	}
 	
 	private static String conStr = "jdbc:sqlserver://localhost:1433; databasename=JAVAOPGAVE; User=sa; Password=1234";
 	
@@ -241,6 +245,35 @@ public class dbTools {
 		}
 		
 		return t;
+	}
+	
+	public static boolean checkUser(String u, String p)
+	{
+		boolean ok = false;
+		try 
+		{
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			
+			Connection con = DriverManager.getConnection(conStr);
+			Statement stmt = con.createStatement();
+			
+			String sQuery = "Select  * from userDB WHERE userName ='" + u + "'";
+			ResultSet rs = stmt.executeQuery(sQuery);
+			
+			while (rs.next()) 
+			{
+				if (p.equals(rs.getString("userPassword")))
+					ok = true;
+			}
+		} 
+		
+		catch (SQLException | ClassNotFoundException e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return ok;
+
 	}
 	
 }

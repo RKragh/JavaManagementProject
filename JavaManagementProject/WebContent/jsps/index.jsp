@@ -12,9 +12,13 @@
     
     <header>
       <div class="h-container">
-        <h1><a href="./index.html" style="logo">Task management</a></h1>
+        <h1><a href="./index.jsp" style="logo">Task management</a></h1>
         <nav>
-          <a href="./index.html">Login</a>
+        
+        
+        <% if (session.getAttribute("LoginOK") == null) {%>
+          <a href="./login.jsp">Login</a>
+          <%} %>
           <a href="./task.html">Task</a>
           <a href="./device.html">Device</a>
         </nav>
@@ -64,6 +68,7 @@
       
     </footer> <!-- Footer content ending -->
     
+    <%session.removeAttribute("LoginOK"); %>
   </body>
   
 </html>
