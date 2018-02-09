@@ -17,7 +17,9 @@ header{
   h1 {
     margin-top: 0;
   }
-  
+  h3 {
+  	font-size: 25px;
+  }
   h1, nav {
     display: inline-block;
     position: relative;
@@ -46,8 +48,9 @@ header{
       border-bottom: 2px dotted white;
     }
   }
-  
 }
+
+
 
 header.minimized {
   height: 60px;
@@ -72,7 +75,10 @@ header.minimized {
   clear: both;
   float: none;
 }
-
+button {
+	border-radius: 25px;
+	color: grey;
+}
 body {
   background: url("https://i.imgur.com/PrlnH7t.jpg") no-repeat center fixed;
   -webkit-background-size: cover;

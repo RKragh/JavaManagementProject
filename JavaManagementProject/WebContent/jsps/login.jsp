@@ -1,10 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login</title>
 <html>
 <head>
 <link rel="stylesheet" type="text/css"
@@ -35,8 +31,8 @@
 			<h1>Login</h1>
 			<form method="POST" action="checkLogon.jsp">
 				Brugernavn: <input type="text" name="txtUsername" /> &nbsp;
-				Password: <input type="password" name="txtPassword" /> &nbsp; <input
-					type="submit" name="btnOK" value="OK" />
+				Password: <input type="password" name="txtPassword" /> &nbsp; 
+				<input class="button" type="submit" name="btnOK" value="OK" />
 			</form>
 		</div>
 
@@ -49,7 +45,7 @@
 		<ul>
 			<li class="left-box" style="text-align: right;">
 				<p>
-					Matti 2014<br> Mattestic & Co © 2014
+					Matti 2014<br> Mattestic & Co Â© 2014
 				</p>
 			</li>
 			<li class="right-box">
