@@ -8,7 +8,20 @@
 </head>
 <body>
 	<%
-		if (session.getAttribute("LoginOK") == null) {
+		Cookie[] cookies = request.getCookies();
+		boolean b = false;
+		if (cookies != null)
+		{
+			for (Cookie c : cookies)
+			{
+				if (c.getName().equals("loginUser"))
+                    b = true;
+			}
+			if (!b)
+				response.sendRedirect("login.jsp");
+		}
+		else
+		{
 			response.sendRedirect("login.jsp");
 		}
 	%>

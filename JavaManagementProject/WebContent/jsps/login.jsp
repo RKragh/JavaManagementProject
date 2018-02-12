@@ -14,10 +14,10 @@
 	<header>
 	<div class="h-container">
 		<h1>
-			<a href="./index.html" style="">Task management</a>
+			<a href="./index.jsp" style="">Task management</a>
 		</h1>
 		<nav> <a href="./login.jsp">Login</a> <a href="./task.html">Task</a>
-		<a href="./device.html">Device</a> </nav>
+		<a href="./device.jsp">Device</a> </nav>
 	</div>
 	<div class="clear"></div>
 	</header>
@@ -29,7 +29,7 @@
 
 
 			<h1>Login</h1>
-			<form method="POST" action="checkLogon.jsp">
+			<form action="../LoginServlet" method="POST">
 				Brugernavn: <input type="text" name="txtUsername" /> &nbsp;
 				Password: <input type="password" name="txtPassword" /> &nbsp; 
 				<input class="button" type="submit" name="btnOK" value="OK" />
