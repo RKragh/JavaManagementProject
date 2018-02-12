@@ -20,11 +20,9 @@
 		</h1>
 		<nav> <%
  	if (session.getAttribute("LoginOK") == null) {
- %> <a
-			href="./login.jsp">Login</a> <%
+ %> <a href="./login.jsp">Login</a> <%
  	}
- %> <a href="./task.html">Task</a> <a
-			href="./device.html">Device</a> </nav>
+ %> <a href="./task.jsp">Task</a> <a href="./device.jsp">Device</a> </nav>
 	</div>
 	<div class="clear"></div>
 	</header>

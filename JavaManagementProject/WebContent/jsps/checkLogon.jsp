@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="dk.tec.dbTools" %>
+<%@ page import="javax.servlet.http.HttpServletResponse" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,7 +24,10 @@
 		if (ok == true)
 		{
 			session.setAttribute("LoginOK", true);
-			response.sendRedirect("index.jsp");
+			RequestDispatcher rd;
+			rd = request.getRequestDispatcher("./index.jsp");
+			rd.forward(request,response);
+			
 		
 		}	else
 		{
