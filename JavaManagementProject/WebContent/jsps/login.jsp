@@ -16,7 +16,7 @@
 		<h1>
 			<a href="./index.jsp" style="">Task management</a>
 		</h1>
-		<nav> <a href="./login.jsp">Login</a> <a href="./task.html">Task</a>
+		<nav> <a href="./login.jsp">Login</a> <a href="./task.jsp">Task</a>
 		<a href="./device.jsp">Device</a> </nav>
 	</div>
 	<div class="clear"></div>

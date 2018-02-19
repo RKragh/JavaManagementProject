@@ -39,7 +39,7 @@ public class UpdateDeviceServlet extends HttpServlet {
 		Device d = new Device();
 		int pId = Integer.parseInt(request.getParameter("pID"));
 		d.setBrandStr(request.getParameter("deviceBrand"));
-		d.setDeviceTypeStr(request.getParameter("model"));
+		d.setModelStr(request.getParameter("model"));
 		d.setRoomLocationStr(request.getParameter("roomLocation"));
 		d.setDeviceTypeStr(request.getParameter("deviceType"));
 		

@@ -35,7 +35,7 @@
 		<div class="text-container">
 
 
-			<h1>Devices</h1>
+			<h1>Tasks</h1>
 
 			<table>
 				<tr>
