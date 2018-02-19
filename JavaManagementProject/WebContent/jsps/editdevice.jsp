@@ -19,12 +19,14 @@
 			<a href="./index.jsp" style="">Task management</a>
 		</h1>
 		<nav> <%
- 	if (session.getAttribute("LoginOK") == null) {
- %> <a
-			href="./login.jsp">Login</a> <%
- 	}
- %> <a href="./task.jsp">Task</a> <a
-			href="./device.jsp">Device</a> </nav>
+ 	if (session.getAttribute("LoginOK") == null) { 
+ 		%> 
+ 		<a href="./login.jsp">Login</a> <%
+ 		}
+ 		%>
+ 		
+		<a href="./task.jsp">Task</a> 
+		<a	href="./device.jsp">Device</a> </nav>
 	</div>
 	<div class="clear"></div>
 	</header>
@@ -39,24 +41,23 @@
 		d = dbTools.getDeviceById(id);	
 		%>
 
-			<h1>Edit Devices1</h1> 
-			
+			<h1>Edit Device</h1> 
+			<br>			
 			<form action="/action_page.php" method="get">
- Edit Device s
-		<br>
-		<label>pID: <%= d.getpID() %></label>
-		<br>
-		<input type="Text" name="deviceBrand" value="<%= d.getBrandStr()  %>">
-		<br>
-		<input type="Text" name="model" value="<%= d.getModelStr() %>">
-		<br>
-		<input type="Text" name="roomLocation" value="<%= d.getRoomLocationStr() %>">
-		<br>
-		<input type="Text" name="deviceType" value="<%= d.getDeviceTypeStr()  %>">
-		
-		
-		
-		</form>
+ 
+			<label>pID: <%= d.getpID() %></label>
+			<br> <br>
+			<input type="Text" name="deviceBrand" value="<%= d.getBrandStr()  %>"> 
+			<br>
+			<input type="Text" name="model" value="<%= d.getModelStr() %>">
+			<br>
+			<input type="Text" name="roomLocation" value="<%= d.getRoomLocationStr() %>">
+			<br>
+			<input type="Text" name="deviceType" value="<%= d.getDeviceTypeStr()  %>">
+			<br>
+			<input type="button" name="submit" value="Gem" onClick="">
+			
+			</form>
 
 		</div>
 
