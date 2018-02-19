@@ -43,7 +43,7 @@
 
 			<h1>Edit Device</h1> 
 			<br>			
-			<form action="/action_page.php" method="get">
+			<form action="../UpdateDeviceServlet" method="POST">
  
 			<label>pID: <%= d.getpID() %></label>
 			<br> <br>
@@ -55,7 +55,7 @@
 			<br>
 			<input type="Text" name="deviceType" value="<%= d.getDeviceTypeStr()  %>">
 			<br>
-			<input type="button" name="submit" value="Gem" onClick="">
+			<input type="submit" name="submit" value="Gem">
 			
 			</form>
 
