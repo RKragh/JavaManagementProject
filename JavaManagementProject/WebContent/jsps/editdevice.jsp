@@ -42,7 +42,7 @@
 			<h1>Edit Devices1</h1> 
 			
 			<form action="/action_page.php" method="get">
- Edit Device 
+ Edit Device s
 		<br>
 		<label>SHÅLÅLÅÅ</label>
 		<input type="text" name="pId" value="<%= d.getpID() %>">
