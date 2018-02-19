@@ -33,40 +33,31 @@
 	<div class="content-holder">
 
 		<div class="text-container">
-
+		<% 
+		int id = Integer.parseInt(request.getParameter("idOfDevice"));
+		Device d = new Device();
+		d = dbTools.getDeviceById(id);
+		
+		
+		
+		%>
 
 			<h1>Edit Devices</h1>
 			
-			<table>
-				<tr>
-				</tr>
-				
-			</table>
-<!-- 
-			<h1>Devices</h1>
-
-			<table>
-				<tr>
-					<th>Brand</th>
-					<th>Model</th>
-					<th>Location</th>
-					<th>Type</th>
-				</tr>
-				<%
-					for (Device d : dbTools.deviceList()) {
-				%>
-				<tr>
-					<td><%=d.getBrandStr()%></td>
-					<td><%=d.getModelStr()%></td>
-					<td><%=d.getRoomLocationStr()%></td>
-					<td><%=d.getDeviceTypeStr()%></td>
-					<td><form method="GET" action="./editdevice.jsp"><input type="submit" name="btnEditDevice" value="<%=d.getpID()%>"></form></td>
-				</tr>
-				<%
-					}
-				%>
- -->
-			</table>
+			<form action="/action_page.php" method="get">
+ Edit Device 
+		<br>
+		<label>SHÅLÅLÅÅ</label>
+		<input type="text" name="pId" value="<%= d.getpID() %>">
+		<br>
+		<input type="Text" name="deviceBrand" value="<%= d.getBrandStr()  %>">
+		<br>
+		<input type="Text" name="model" value="<%= d.getModelStr() %>">
+		<br>
+		<input type="Text" name="roomLocation" value="<%= d.getRoomLocationStr() %>">
+		<br>
+		<input type="Text" name="deviceType" value="<%= d.getDeviceTypeStr()  %>">
+		</form>
 
 		</div>
 

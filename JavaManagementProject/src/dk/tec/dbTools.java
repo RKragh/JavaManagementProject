@@ -317,7 +317,7 @@ public class dbTools {
 		return d;
 	}
 
-	private static Device getDeviceById(int id) throws SQLException
+	public static Device getDeviceById(int id) throws SQLException
 	{
 		Device device = new Device();
 		try {
