@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="isloggedon.jsp"%>
+<%@ page import="dk.tec.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <link rel="stylesheet" type="text/css"
 	href="../stylesheets/stylesheet.css">
-<title>Index</title>
-<meta charset="UTF-8" />
-
+<title>Login</title>
+<meta charset="UTF-8">
 </head>
 
 <body>
@@ -20,9 +20,11 @@
 		</h1>
 		<nav> <%
  	if (session.getAttribute("LoginOK") == null) {
- %> <a href="./login.jsp">Login</a> <%
+ %> <a
+			href="./login.jsp">Login</a> <%
  	}
- %> <a href="./task.jsp">Task</a> <a href="./device.jsp">Device</a> </nav>
+ %> <a href="./task.jsp">Task</a> <a
+			href="./device.jsp">Device</a> </nav>
 	</div>
 	<div class="clear"></div>
 	</header>
@@ -31,23 +33,40 @@
 	<div class="content-holder">
 
 		<div class="text-container">
+
+
+			<h1>Edit Devices</h1>
 			
-
-			<h1>Velkommen til!</h1>
-			<h3>Vælg venligst en side.</h3>
-			<div class="buttonContainer">
-				<a href="./task.jsp"> 
-				<button class="button">Task</button>
-				</a>
-				<a href="./device.jsp"> 
-				<button class="button">Device</button>
-				</a>
+			<table>
+				<tr>
+				</tr>
 				
-				
-			</div>
+			</table>
+<!-- 
+			<h1>Devices</h1>
 
-
-
+			<table>
+				<tr>
+					<th>Brand</th>
+					<th>Model</th>
+					<th>Location</th>
+					<th>Type</th>
+				</tr>
+				<%
+					for (Device d : dbTools.deviceList()) {
+				%>
+				<tr>
+					<td><%=d.getBrandStr()%></td>
+					<td><%=d.getModelStr()%></td>
+					<td><%=d.getRoomLocationStr()%></td>
+					<td><%=d.getDeviceTypeStr()%></td>
+					<td><form method="GET" action="./editdevice.jsp"><input type="submit" name="btnEditDevice" value="<%=d.getpID()%>"></form></td>
+				</tr>
+				<%
+					}
+				%>
+ -->
+			</table>
 
 		</div>
 
