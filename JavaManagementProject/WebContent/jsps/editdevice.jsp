@@ -39,21 +39,21 @@
 		int id = Integer.parseInt(request.getParameter("idOfDevice"));
 		Device d = new Device();
 		d = dbTools.getDeviceById(id);	
-		%>
+		%> 
 
 			<h1>Edit Device</h1> 
 			<br>			
 			<form action="../UpdateDeviceServlet" method="POST">
- 			<input type="hidden" name="pID" value="<%=id%>">
+ 
 			<label>pID: <%= d.getpID() %></label>
 			<br> <br>
-			<input type="Text" name="deviceBrand" value="<%=d.getBrandStr()%>"> 
+			<input type="Text" name="deviceBrand" value="<%= d.getBrandStr()  %>"> 
 			<br>
-			<input type="Text" name="model" value="<%=d.getModelStr()%>">
+			<input type="Text" name="model" value="<%= d.getModelStr() %>">
 			<br>
-			<input type="Text" name="roomLocation" value="<%= d.getRoomLocationStr()%>">
+			<input type="Text" name="roomLocation" value="<%= d.getRoomLocationStr() %>">
 			<br>
-			<input type="Text" name="deviceType" value="<%= d.getDeviceTypeStr()%>">
+			<input type="Text" name="deviceType" value="<%= d.getDeviceTypeStr()  %>">
 			<br>
 			<input type="submit" name="submit" value="Gem">
 			

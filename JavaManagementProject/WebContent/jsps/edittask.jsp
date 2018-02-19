@@ -39,12 +39,10 @@
 		t = dbTools.getTaskById(id);	
 		%>
 
-			<h1>Edit Devices1</h1> 
+			<h1>Edit Task</h1> 
 			
 		<form action="../updateTaskServlet" method="POST">
- 		Edit Task
 		<br>
-		<label>SHÅLÅLÅÅ</label>
 		<label>pID: <%= t.getpID() %></label>
 		<input type="hidden" name="pId" value="<%=t.getpID() %>">
 		<br>
