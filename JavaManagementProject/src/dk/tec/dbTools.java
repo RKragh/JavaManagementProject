@@ -303,6 +303,7 @@ public class dbTools {
 	private static Device fillDeviceWithDataResult(ResultSet rs) {
 		Device d = new Device();
 		try {
+			d.setpID(rs.getInt("pID"));
 			d.setBrandStr(rs.getString("brand"));
 			d.setDeviceTypeStr(rs.getString("deviceType"));
 			d.setModelStr(rs.getString("model"));

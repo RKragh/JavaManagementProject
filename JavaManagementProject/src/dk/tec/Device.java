@@ -3,7 +3,7 @@ package dk.tec;
 public class Device 
 {
 	
-
+	private int pID;
 	private String brandStr;
 	private String modelStr;
 	private String roomLocationStr;
@@ -42,6 +42,12 @@ public class Device
 	}
 	public void setDeviceTypeStr(String deviceTypeStr) {
 		this.deviceTypeStr = deviceTypeStr;
+	}
+	public int getpID() {
+		return pID;
+	}
+	public void setpID(int pID) {
+		this.pID = pID;
 	}
 
 	

@@ -41,7 +41,7 @@
 				<tr>
 					<th>Brand</th>
 					<th>Model</th>
-					<th>Location></th>
+					<th>Location</th>
 					<th>Type</th>
 				</tr>
 				<%
@@ -52,6 +52,7 @@
 					<td><%=d.getModelStr()%></td>
 					<td><%=d.getRoomLocationStr()%></td>
 					<td><%=d.getDeviceTypeStr()%></td>
+					<td><form method="GET" action="./editdevice.jsp"><input type="submit" name="btnEditDevice" value="<%=d.getpID()%>"></form></td>
 				</tr>
 				<%
 					}
