@@ -219,6 +219,7 @@ public class dbTools {
 
 	private static Task fillClassWithDataResult(ResultSet rs, Task t) {
 		try {
+			t.setpID(rs.getInt("pID"));
 			t.setTaskName(rs.getString("taskName"));
 			t.setTaskDescription(rs.getString("taskDescription"));
 			t.setTaskImage(rs.getString("taskImage"));
@@ -314,6 +315,86 @@ public class dbTools {
 		}
 
 		return d;
+	}
+
+	private static Device getDeviceById(int id) throws SQLException
+	{
+		Device device = new Device();
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+
+			con = DriverManager.getConnection(conStr);
+			stmt = con.createStatement();
+
+			rs = stmt.executeQuery("Select * from Devices WHERE pID = " + id + "");
+			ResultSetMetaData rsmd = rs.getMetaData();
+
+			while (rs.next()) {
+				device = fillDeviceWithDataResult(rs);
+			}
+
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException ignore) {
+				}
+			if (stmt != null)
+				try {
+					stmt.close();
+				} catch (SQLException ignore) {
+				}
+			if (con != null)
+				try {
+					con.close();
+				} catch (SQLException ignore) {
+				}
+		}
+		
+		
+		return device;
+	}
+
+	private static Task getTaskById(int id) throws SQLException
+	{
+		Task task = new Task();
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+
+			con = DriverManager.getConnection(conStr);
+			stmt = con.createStatement();
+
+			rs = stmt.executeQuery("Select * from tasks WHERE pID = " + id + "");
+			ResultSetMetaData rsmd = rs.getMetaData();
+
+			while (rs.next()) {
+				task = fillClassWithDataResult(rs, task);
+			}
+
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException ignore) {
+				}
+			if (stmt != null)
+				try {
+					stmt.close();
+				} catch (SQLException ignore) {
+				}
+			if (con != null)
+				try {
+					con.close();
+				} catch (SQLException ignore) {
+				}
+		}
+		return task;
 	}
 
 }

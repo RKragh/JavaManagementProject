@@ -7,7 +7,7 @@ import java.util.Date;
 public class Task {
 	
 	
-	
+	private int pID;
 	private String taskName;
 	private String taskDescription;
 	private String taskImage;
@@ -95,6 +95,12 @@ public class Task {
 		DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 		String sCreateDate = df.format(date);
 		return String.format("Task name: %s \nCreated on: %s", this.getTaskName(), sCreateDate);
+	}
+	public int getpID() {
+		return pID;
+	}
+	public void setpID(int pID) {
+		this.pID = pID;
 	}
 	
 
