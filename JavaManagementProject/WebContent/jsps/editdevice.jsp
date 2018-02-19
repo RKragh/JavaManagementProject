@@ -44,8 +44,7 @@
 			<form action="/action_page.php" method="get">
  Edit Device s
 		<br>
-		<label>SHÅLÅLÅÅ</label>
-		<input type="text" name="pId" value="<%= d.getpID() %>">
+		<label>pID: <%= d.getpID() %></label>
 		<br>
 		<input type="Text" name="deviceBrand" value="<%= d.getBrandStr()  %>">
 		<br>
@@ -54,6 +53,9 @@
 		<input type="Text" name="roomLocation" value="<%= d.getRoomLocationStr() %>">
 		<br>
 		<input type="Text" name="deviceType" value="<%= d.getDeviceTypeStr()  %>">
+		
+		
+		
 		</form>
 
 		</div>
