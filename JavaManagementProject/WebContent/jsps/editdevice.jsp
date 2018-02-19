@@ -36,10 +36,7 @@
 		<% 
 		int id = Integer.parseInt(request.getParameter("idOfDevice"));
 		Device d = new Device();
-		d = dbTools.getDeviceById(id);
-		
-		
-		
+		d = dbTools.getDeviceById(id);	
 		%>
 
 			<h1>Edit Devices</h1>
