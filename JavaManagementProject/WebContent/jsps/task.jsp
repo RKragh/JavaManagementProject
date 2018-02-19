@@ -39,20 +39,22 @@
 
 			<table>
 				<tr>
-					<th>Brand</th>
-					<th>Model</th>
-					<th>Location</th>
-					<th>Type</th>
+					<th>Subject</th>
+					<th>Room</th>
+					<th>Date Created</th>
+					<th>Deadline date</th>
 				</tr>
 				<%
-					for (Device d : dbTools.deviceList()) {
+					for (Task t : dbTools.returnList()) {
 				%>
 				<tr>
-					<td><%=d.getBrandStr()%></td>
-					<td><%=d.getModelStr()%></td>
-					<td><%=d.getRoomLocationStr()%></td>
-					<td><%=d.getDeviceTypeStr()%></td>
-					<td><form method="GET" action="./editdevice.jsp"><input type="submit" name="btnEditDevice" value="<%=d.getpID()%>"></form></td>
+					<td><%=t.getTaskName()%></td>
+					<td><%=t.getRoomLocation()%></td>
+					<td><%=t.getFormattedDate(t.getCreateDate())%></td>
+					<td><%=t.getFormattedDate(t.getDeadlineDate())%></td>
+					<td><form method="GET" action="./edittask.jsp">
+					<input type="hidden" name="idOfTask" value="<%=t.getpID()%>">
+					<input type="submit" name="btnEditTask" value="More"></form></td>
 				</tr>
 				<%
 					}

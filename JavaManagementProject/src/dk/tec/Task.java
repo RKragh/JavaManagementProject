@@ -103,6 +103,14 @@ public class Task {
 		this.pID = pID;
 	}
 	
+	public String getFormattedDate(Long inputDate)
+	{
+		Date date = new Date(inputDate);
+		DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+		String sCreateDate = df.format(date);
+		
+		return sCreateDate;
+	}
 
 	
 

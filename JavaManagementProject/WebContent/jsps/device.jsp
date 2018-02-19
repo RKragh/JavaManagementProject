@@ -52,7 +52,9 @@
 					<td><%=d.getModelStr()%></td>
 					<td><%=d.getRoomLocationStr()%></td>
 					<td><%=d.getDeviceTypeStr()%></td>
-					<td><form method="GET" action="./editdevice.jsp"><input type="submit" name="btnEditDevice" value="<%=d.getpID()%>"></form></td>
+					<td><form method="GET" action="./editdevice.jsp">
+					<input type="hidden" name="idOfDevice" value="<%=d.getpID()%>">
+					<input type="submit" name="btnEditDevice" value="Edit"></form></td>
 				</tr>
 				<%
 					}
