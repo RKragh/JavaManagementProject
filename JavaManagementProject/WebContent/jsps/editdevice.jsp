@@ -39,7 +39,7 @@
 		d = dbTools.getDeviceById(id);	
 		%>
 
-			<h1>Edit Devices</h1>
+			<h1>Edit Devices1</h1>
 			
 			<form action="/action_page.php" method="get">
  Edit Device 
