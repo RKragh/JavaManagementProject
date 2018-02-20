@@ -62,6 +62,9 @@
 
 			</table>
 
+			<form method="GET" action="./createdevice.jsp">
+			<input type="submit" name="BtncreateDevice" value="Create new device">
+			</form>
 		</div>
 
 	</div>
