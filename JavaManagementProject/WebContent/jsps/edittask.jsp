@@ -46,14 +46,19 @@
 		<label>pID: <%= t.getpID() %></label>
 		<input type="hidden" name="pId" value="<%=t.getpID() %>">
 		<br>
+		<Label>Task Name</Label>
 		<input type="Text" name="taskName" value="<%= t.getTaskName()%>">
 		<br>
+		<Label>Task Description</Label>
 		<input type="Text" name="taskDescription" value="<%=t.getTaskDescription()%>">
 		<br>
+		<Label>Room location</Label>
 		<input type="Text" name="roomLocation" value ="<%=t.getRoomLocation()%>">
 		<br>
+		<Label>Task Image</Label>
 		<input type="Text" name="taskImage" value="<%=t.getTaskImage()%>">
 		<br>
+		<Label>Completed by</Label>
 		<input type="Text" name="completedBy">
 		<br>
 		</form>
