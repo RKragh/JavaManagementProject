@@ -41,8 +41,8 @@
 
 			<h1>Edit Device</h1> 
 			<br>			
+			
 			<form action="../UpdateDeviceServlet" method="POST">
- 
 			<label>pID: <%= d.getpID() %></label>
 			<br> <br>
 			<input type="Text" name="deviceBrand" value="<%= d.getBrandStr()  %>"> 
