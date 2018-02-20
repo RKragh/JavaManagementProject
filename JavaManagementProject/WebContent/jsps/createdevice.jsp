@@ -31,34 +31,34 @@
 	<!-- Main content goes from here -->
 	<section class="middle">
 	<div class="content-holder">
-
+		
 		<div class="text-container">
 		<% 
-		int id = Integer.parseInt(request.getParameter("idOfTask"));
-		Task t = new Task();
-		t = dbTools.getTaskById(id);	
-		%>
+		int id = Integer.parseInt(request.getParameter("idOfDevice"));
+		Device d = new Device();
+		d = dbTools.getDeviceById(id);	
+		%> 
 
-			<h1>Edit Task</h1> 
+			<h1>Edit Device</h1> 
+			<br>			
+			<form action="../UpdateDeviceServlet" method="POST">
+ 
+			<label>pID: <%= d.getpID() %></label>
+			<br> <br>
+			<input type="Text" name="deviceBrand" value="<%= d.getBrandStr()  %>"> 
+			<br>
+			<input type="Text" name="model" value="<%= d.getModelStr() %>">
+			<br>
+			<input type="Text" name="roomLocation" value="<%= d.getRoomLocationStr() %>">
+			<br>
+			<input type="Text" name="deviceType" value="<%= d.getDeviceTypeStr()  %>">
+			<br>
+			<input type="submit" name="submit" value="Gem">
 			
-		<form action="../updateTaskServlet" method="POST">
-		<br>
-		<label>pID: <%= t.getpID() %></label>
-		<input type="hidden" name="pId" value="<%=t.getpID() %>">
-		<br>
-		<input type="Text" name="taskName" value="<%= t.getTaskName()%>">
-		<br>
-		<input type="Text" name="taskDescription" value="<%=t.getTaskDescription()%>">
-		<br>
-		<input type="Text" name="roomLocation" value ="<%=t.getRoomLocation()%>">
-		<br>
-		<input type="Text" name="taskImage" value="<%=t.getTaskImage()%>">
-		<br>
-		<input type="Text" name="completedBy">
-		<br>
-		</form>
+			</form>
 
 		</div>
+
 	</div>
 	</section>
 	<!-- To here -->
