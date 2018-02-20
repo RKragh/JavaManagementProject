@@ -42,22 +42,22 @@
 		<label>Create new task</label>
 
 		<br>
-		<Label>Task Name</Label>
+		<Label>Task Name</Label><br>
 		<input type="Text" name="taskName">
 		<br>
-		<Label>Task Description</Label>
+		<Label>Task Description</Label><br>
 		<input type="Text" name="taskDescription">
 		<br>
-		<Label>Room location</Label>
+		<Label>Room location</Label><br>
 		<input type="Text" name="roomLocation">
 		<br>
-		<Label>Task Image</Label>
+		<Label>Task Image</Label><br>
 		<input type="Text" name="taskImage">
 		<br>
-		<Label>Created by</Label>
+		<Label>Created by</Label><br>
 		<input type="Text" name="createdBy">
 		<br>
-		<label>Deadline (dd-MM-yyyy)</label>
+		<label>Deadline (dd-MM-yyyy)</label><br>
 		<input type="Text" name="deadlineDate">
 		<br>
 		<input type="Submit" name="btnOk" value="Create task">

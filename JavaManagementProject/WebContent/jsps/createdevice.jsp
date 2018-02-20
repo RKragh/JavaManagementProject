@@ -41,7 +41,7 @@
 
 			<h1>Create a device</h1> 
 			<br>			
-			
+			<div class="align-right">
 			<form action="../CreateDeviceServlet" method="POST">
 			<label>Brand</label><br>
 			<input type="Text" name="deviceBrand"> 
@@ -58,7 +58,7 @@
 			<input type="submit" name="submit" value="Create device">
 			
 			</form>
-
+			</div>
 		</div>
 
 	</div>
