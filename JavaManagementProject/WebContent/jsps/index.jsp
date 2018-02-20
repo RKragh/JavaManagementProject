@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="isloggedon.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -35,15 +35,16 @@
 
 			<h1>Velkommen til!</h1>
 			<h3>Vælg venligst en side.</h3>
+
 			<div class="buttonContainer">
+
 				<a href="./task.jsp"> 
 				<button class="button">Task</button>
 				</a>
 				<a href="./device.jsp"> 
 				<button class="button">Device</button>
 				</a>
-				
-				
+
 			</div>
 
 
