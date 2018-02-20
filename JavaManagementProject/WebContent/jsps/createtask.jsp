@@ -33,9 +33,9 @@
 	<div class="content-holder">
 
 		<div class="text-container">
-<<<<<<< HEAD
 
-			<h1>Edit Task</h1> 
+
+			<h1>Create a new Task</h1> 
 			
 		<form action="../CreateTaskServlet" method="POST">
 		<br>
@@ -61,32 +61,6 @@
 		<input type="Text" name="deadlineDate">
 		<br>
 		<input type="Submit" name="btnOk" value="Create task">
-=======
-		<% 
-		int id = Integer.parseInt(request.getParameter("idOfTask"));
-		Task t = new Task();
-		t = dbTools.getTaskById(id);	
-		%>
-
-			<h1>Create a Task</h1> 
-			
-			
-		<form action="../updateTaskServlet" method="POST">
-		<br>
-		<label>pID: <%= %></label>
-		<input type="hidden" name="pId" value="">
-		<br>
-		<input type="Text" name="taskName" value="<%= %>">
-		<br>
-		<input type="Text" name="taskDescription" value="<%=%>">
-		<br>
-		<input type="Text" name="roomLocation" value ="<%=%>">
-		<br>
-		<input type="Text" name="taskImage" value="<%=%>">
-		<br>
-		<input type="Text" name="completedBy">
-		<br>
->>>>>>> 91f612ff1d3e07ea4268a79677844ee2f8381c2e
 		</form>
 
 		</div>
