@@ -47,12 +47,16 @@
  
 			<label>pID: <%= d.getpID() %></label>
 			<br> <br>
+			<label>Brand</label><br>
 			<input type="Text" name="deviceBrand" value="<%= d.getBrandStr()  %>"> 
 			<br>
+			<label>Model</label><br>
 			<input type="Text" name="model" value="<%= d.getModelStr() %>">
 			<br>
+			<label>Room</label><br>
 			<input type="Text" name="roomLocation" value="<%= d.getRoomLocationStr() %>">
 			<br>
+			<label>Device type</label><br>
 			<input type="Text" name="deviceType" value="<%= d.getDeviceTypeStr()  %>">
 			<br>
 			<input type="submit" name="submit" value="Gem">

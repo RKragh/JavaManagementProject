@@ -39,19 +39,23 @@
 		//d = dbTools.getDeviceById(id);	
 		%> 
 
-			<h1>Edit Device</h1> 
+			<h1>Create a device</h1> 
 			<br>			
 			
-			<form action="../UpdateDeviceServlet" method="POST">
+			<form action="../CreateDeviceServlet" method="POST">
+			<label>Brand</label><br>
 			<input type="Text" name="deviceBrand"> 
 			<br>
+			<label>Model</label><br>
 			<input type="Text" name="model">
 			<br>
+			<label>Room</label><br>
 			<input type="Text" name="roomLocation">
 			<br>
+			<label>Device Type</label><br>
 			<input type="Text" name="deviceType">
 			<br>
-			<input type="submit" name="submit" value="Gem">
+			<input type="submit" name="submit" value="Create device">
 			
 			</form>
 
