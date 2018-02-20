@@ -34,40 +34,36 @@
 
 		<div class="text-container">
 
-
-			<h1>Tasks</h1>
-
-			<table>
-				<tr>
-					<th>Subject</th>
-					<th>Room</th>
-					<th>Date Created</th>
-					<th>Deadline date</th>
-				</tr>
-				<%
-					for (Task t : dbTools.returnList()) {
-				%>
-				<tr>
-					<td><%=t.getTaskName()%></td>
-					<td><%=t.getRoomLocation()%></td>
-					<td><%=t.getFormattedDate(t.getCreateDate())%></td>
-					<td><%=t.getFormattedDate(t.getDeadlineDate())%></td>
-					<td><form method="GET" action="./edittask.jsp">
-					<input type="hidden" name="idOfTask" value="<%=t.getpID()%>">
-					<input type="submit" name="btnEditTask" value="More"></form></td>
-				</tr>
-				<%
-					}
-				%>
-
-			</table>
+			<h1>Edit Task</h1> 
 			
-			<form action="./createtask.jsp" method="GET">
-			<input type="submit" name="btnCreateTask" value="Create new">
-			</form>
+		<form action="../CreateTaskServlet" method="POST">
+		<br>
+		<label>Create new task</label>
+
+		<br>
+		<Label>Task Name</Label>
+		<input type="Text" name="taskName">
+		<br>
+		<Label>Task Description</Label>
+		<input type="Text" name="taskDescription">
+		<br>
+		<Label>Room location</Label>
+		<input type="Text" name="roomLocation">
+		<br>
+		<Label>Task Image</Label>
+		<input type="Text" name="taskImage">
+		<br>
+		<Label>Created by</Label>
+		<input type="Text" name="createdBy">
+		<br>
+		<label>Deadline (dd-MM-yyyy)</label>
+		<input type="Text" name="deadlineDate">
+		<br>
+		<input type="Submit" name="btnOk" value="Create task">
+		</form>
 
 		</div>
-
+		
 	</div>
 	</section>
 	<!-- To here -->

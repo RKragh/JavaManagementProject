@@ -94,7 +94,7 @@ public class dbTools {
 		}
 	}
 
-	public void insertTaskIntoDB(Task t) {
+	public static void insertTaskIntoDB(Task t) {
 		try {
 
 			con = DriverManager.getConnection(conStr);
