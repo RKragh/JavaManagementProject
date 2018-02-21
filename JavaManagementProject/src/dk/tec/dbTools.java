@@ -101,10 +101,10 @@ public class dbTools {
 			stmt = con.createStatement();
 
 			String queryString = String.format(
-					"Insert into tasks(taskName,taskDescription, taskImage, roomLocation, createdBy, completedBy, dateDone, dateCreated, deadlineDate)"
-							+ " values ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')",
+					"Insert into tasks(taskName,taskDescription, taskImage, roomLocation, createdBy, dateCreated, deadlineDate)"
+							+ " values ('%s', '%s', '%s', '%s', '%s', '%s', '%s')",
 					t.getTaskName(), t.getTaskDescription(), t.getTaskImage(), t.getRoomLocation(), t.getCreatedBy(),
-					t.getCompletedBy(), t.getCompletedDate(), t.getCreateDate(), t.getDeadlineDate());
+					 t.getCreateDate(), t.getDeadlineDate());
 
 			int updateSuccess = stmt.executeUpdate(queryString);
 			if (updateSuccess > 0) {
@@ -137,7 +137,7 @@ public class dbTools {
 			ResultSet rs = stmt.executeQuery(sQuery);
 
 			while (rs.next()) {
-				t = fillClassWithDataResult(rs, t);
+				t = fillClassWithDataResult(rs);
 			}
 		}
 
@@ -169,7 +169,7 @@ public class dbTools {
 			ResultSet rs = stmt.executeQuery(sQuery);
 
 			while (rs.next()) {
-				t = fillClassWithDataResult(rs, t);
+				t = fillClassWithDataResult(rs);
 			}
 		}
 
@@ -183,8 +183,10 @@ public class dbTools {
 	public static List<Task> returnList() throws SQLException {
 
 		List<Task> tasks = new ArrayList<Task>();
-		Task t = new Task();
+		
 		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			
 			con = DriverManager.getConnection(conStr);
 			stmt = con.createStatement();
 
@@ -192,9 +194,12 @@ public class dbTools {
 			rs = stmt.executeQuery(sQuery);
 
 			while (rs.next()) {
-				t = fillClassWithDataResult(rs, t);
-				tasks.add(t);
+				
+				tasks.add(fillClassWithDataResult(rs));
 			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} finally {
 			if (rs != null)
 				try {
@@ -217,7 +222,9 @@ public class dbTools {
 
 	}
 
-	private static Task fillClassWithDataResult(ResultSet rs, Task t) {
+	private static Task fillClassWithDataResult(ResultSet rs) {
+		
+		Task t = new Task();
 		try {
 			t.setpID(rs.getInt("pID"));
 			t.setTaskName(rs.getString("taskName"));
@@ -371,7 +378,7 @@ public class dbTools {
 			ResultSetMetaData rsmd = rs.getMetaData();
 
 			while (rs.next()) {
-				task = fillClassWithDataResult(rs, task);
+				task = fillClassWithDataResult(rs);
 			}
 
 		} catch (ClassNotFoundException e) {
@@ -444,7 +451,7 @@ public class dbTools {
 
 			rs = stmt.executeQuery("UPDATE tasks SET taskName = '" + t.getTaskName() + "', taskDescription = '" + t.getTaskDescription() + 
 					"', taskImage = '" + t.getTaskImage() + "', roomLocation = '" + t.getRoomLocation() +
-					"', completedBy = '" + t.getCompletedBy() + "', dateDone = " + System.currentTimeMillis() + ",  WHERE pID = " + id + "");
+					"', completedBy = '" + t.getCompletedBy() + "', dateDone = " + System.currentTimeMillis() + ",  WHERE pID = " + id );
 			ResultSetMetaData rsmd = rs.getMetaData();
 
 
@@ -468,6 +475,44 @@ public class dbTools {
 				} catch (SQLException ignore) {
 				}
 		}
+	}
+	
+	public static void deleteDeviceById(int id) throws SQLException
+	{
+		try {
+
+			Connection con = DriverManager.getConnection(conStr);
+			Statement stmt = con.createStatement();
+
+			String sQuery = "DELETE from Devices WHERE pID =" + id;
+			ResultSet rs = stmt.executeQuery(sQuery);
+
+		}
+
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+	}
+	
+	public static void deleteTaskById(int id) throws SQLException
+	{
+		try {
+
+			Connection con = DriverManager.getConnection(conStr);
+			Statement stmt = con.createStatement();
+
+			String sQuery = "DELETE from Tasks WHERE pID =" + id;
+			ResultSet rs = stmt.executeQuery(sQuery);
+
+		}
+
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
 	}
 
 }

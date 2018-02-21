@@ -54,7 +54,11 @@
 					<td><%=t.getFormattedDate(t.getDeadlineDate())%></td>
 					<td><form method="GET" action="./edittask.jsp">
 					<input type="hidden" name="idOfTask" value="<%=t.getpID()%>">
-					<input type="submit" name="btnEditTask" value="More"></form></td>
+					<input type="submit" name="btnEditTask" value="More">
+					</form></td>
+					<td><form method="POST" action="../UpdateTaskServlet">
+					<input type="hidden" name="idOfTask" value="<%=t.getpID()%>">
+					<input type="submit" name="btnDelTask" value="Delete"></form> </td>
 				</tr>
 				<%
 					}

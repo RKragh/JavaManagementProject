@@ -54,7 +54,11 @@
 					<td><%=d.getDeviceTypeStr()%></td>
 					<td><form method="GET" action="./editdevice.jsp">
 					<input type="hidden" name="idOfDevice" value="<%=d.getpID()%>">
-					<input type="submit" name="btnEditDevice" value="Edit"></form></td>
+					<input type="submit" name="btnEditDevice" value="Edit"></form>
+					</td>
+					<td><form method="POST" action="../UpdateDeviceServlet">
+					<input type="hidden" name="idOfDevice" value="<%=d.getpID()%>">
+					<input type="submit" name="btnDelDevice" value="Delete"></form> </td>
 				</tr>
 				<%
 					}

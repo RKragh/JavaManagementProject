@@ -36,21 +36,39 @@ public class UpdateDeviceServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Device d = new Device();
-		int pId = Integer.parseInt(request.getParameter("pID"));
-		d.setBrandStr(request.getParameter("deviceBrand"));
-		d.setModelStr(request.getParameter("model"));
-		d.setRoomLocationStr(request.getParameter("roomLocation"));
-		d.setDeviceTypeStr(request.getParameter("deviceType"));
-		
-		try {
-			dbTools.updateDeviceById(pId, d);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if (request.getParameter("btnDelDevice") != null)
+		{
+			try {
+				dbTools.deleteDeviceById(Integer.parseInt(request.getParameter("idOfDevice")));
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			response.sendRedirect("./jsps/device.jsp");
 		}
+		else
+		{
+			Device d = new Device();
+			int pId = Integer.parseInt(request.getParameter("pID"));
+			d.setBrandStr(request.getParameter("deviceBrand"));
+			d.setModelStr(request.getParameter("model"));
+			d.setRoomLocationStr(request.getParameter("roomLocation"));
+			d.setDeviceTypeStr(request.getParameter("deviceType"));
+			
+			try {
+				dbTools.updateDeviceById(pId, d);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			response.sendRedirect("./jsps/device.jsp");
+		}
+
 		
-		response.sendRedirect("./jsps/device.jsp");
+		
 	}
 
 }
