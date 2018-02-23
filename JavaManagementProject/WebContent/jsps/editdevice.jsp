@@ -59,6 +59,7 @@
 			<label>Device type</label><br>
 			<input type="Text" name="deviceType" value="<%= d.getDeviceTypeStr()  %>">
 			<br>
+			<input type="hidden" name="idOfDevice" value="<%=d.getpID() %>">
 			<input type="submit" name="submit" value="Gem">
 			
 			</form>
